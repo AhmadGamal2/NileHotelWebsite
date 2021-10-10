@@ -1,0 +1,85 @@
+﻿
+@model appconsumeapi.Models.Room
+@{
+    ViewBag.Title = "RoomDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .container-fluid img {
+        object-fit: contain;
+        width: 100%;
+        height: 400px;
+    }
+
+    .container-fluid {
+        margin-top: 80px;
+    }
+
+        .container-fluid h2 {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            background-color: #274f64;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            margin-top: 10px auto;
+        }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 parent">
+            <img src="~/Content/assets/images/@Html.DisplayFor(m=>m.photo)" />
+            <h2>
+                Room Number @Html.DisplayFor(model => model.RID)
+            </h2>
+            <h4 class="ml-5 mt-5">
+                Branch Name
+            </h4>
+            <p class="ml-5">
+                @Html.DisplayFor(model => model.Branch.BName)
+            </p>
+            <h4 class="ml-5 mt-5">
+                Branch Location
+            </h4>
+            <p class="ml-5">
+                @Html.DisplayFor(model => model.Branch.location)
+            </p>
+            <h4 class="ml-5 mt-5">
+                Room Type
+            </h4>
+            <p class="ml-5">
+                @Html.DisplayFor(model => model.type)
+            </p>
+
+            @if(Model.type=="Suite")
+            {
+                <h4 class="ml-5 mt-5">
+                    Number of Beds
+                </h4>
+                <p class="ml-5">
+                    @Html.DisplayFor(model => model.No_Beds)
+                </p>
+            }
+            <h4 class="ml-5 mt-5">
+                Room Price
+            </h4>
+            <p class="ml-5">
+                @Html.DisplayFor(model => model.price)
+
+            </p>
+            <h4 class="ml-5 mt-5">
+                Status
+            </h4>
+            <p class="ml-5">
+                @Html.DisplayFor(model => model.Status)
+
+            </p>
+        </div>
+
+    </div>
+
+</div>
+

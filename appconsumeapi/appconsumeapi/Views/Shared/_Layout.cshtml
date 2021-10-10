@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Breezed HTML Bootstrap Template</title>
+
+    <!--
+
+    Breezed Template
+
+    https://templatemo.com/tm-543-breezed
+
+    -->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/Content/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/Content/assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="/Content/assets/css/templatemo-breezed.css">
+
+    <link rel="stylesheet" href="/Content/assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="/Content/assets/css/lightbox.css">
+    <style>
+        .nav li a {
+            color: #afafaf !important;
+        }
+
+        .main-nav .logo {
+            color: #afafaf !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            Nile  <span> Hotel</span>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section">@Html.ActionLink("Home", "index", "Home", new { @class = "active" })</li>
+                            <li class="submenu">
+                                <a href="javascript:;">Our Branches</a>
+                                <ul>
+                                    <li>@Html.ActionLink("All", "allbranches", "Home")</li>
+                                    @*<li><a href="">Heart</a></li>*@
+                                    <li>@Html.ActionLink("Nile 1", "allrooms", "Home", new { id = 1 }, "")</li>
+                                    <li>@Html.ActionLink("Nile 2", "allrooms", "Home", new { id = 2 }, "")</li>
+                                    <li>@Html.ActionLink("Nile 3", "allrooms", "Home", new { id = 3 } , "")</li>
+                                </ul>
+                            </li>
+                            @if (Session["user_id"] != null)
+                            {
+                                <li class="submenu">
+                                    <a href="javascript:;">Welcome @Session["user_uname"] !</a>
+                                    <ul>
+                                        <li>@Html.ActionLink("Profile", "profile", "Home")</li>
+                                        <li>@Html.ActionLink("Logout", "logout", "Home")</li>
+                                    </ul>
+                                </li>
+                            }
+                            else if (Request.Cookies["full"] != null)
+                            {
+                                <li class="submenu">
+                                    <a href="javascript:;">Welcome @Request.Cookies["full"].Values["Name"] !</a>
+                                    <ul>
+                                        <li>@Html.ActionLink("Profile", "profile", "Home")</li>
+                                        <li>@Html.ActionLink("Logout", "logout", "Home")</li>
+                                    </ul>
+                                </li>
+                            }
+
+                            else
+                            {
+
+                                <li class="scroll-to-section">@Html.ActionLink("Login", "login", "Home")</li>
+                                <li class="scroll-to-section">@Html.ActionLink("Register", "register", "Home")</li>
+                            }
+                            <div class="search-icon">
+                                <a href="#search"><i class="fa fa-search"></i>*</a>
+                            </div>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <!-- ***** Search Area ***** -->
+    <div id="search">
+        <button type="button" class="close">×</button>
+
+        @using (Html.BeginForm("search", "Home", FormMethod.Get, new { id = "contact" }))
+        {
+            @Html.TextBox("searching", "", new { placeholder = "SEARCH KEYWORD(s)" })
+            <input style=" top: 50%; left: 33%; margin-top: 61px; width: 50%;" type="submit" value="search" class="main-button" />
+        }
+    </div>
+    @RenderBody()
+    <!-- ======= Footer ======= -->
+    <footer id="footer" style="padding:0px">
+    <br /><br />
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        <h3>Nile Hotel</h3>
+                        <p>
+                            Maaadi<br>
+                            Cairo<br>
+                            Egypt <br><br>
+                            <strong>Phone:</strong>+20 1064606100<br>
+                            <strong>Email:</strong> ahmadgamal1494@gmail.com<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#top">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#contact-us">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+
+                        <p class="p_footer">We work to have nice vacation</p>
+                        <p class="p_footer">Happy Vacation, Happy Life</p>
+            </div>
+        </div>
+
+        <div class="container d-md-flex py-4">
+
+            <div class="mr-md-auto text-center text-md-left">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Nile Hotel</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    Designed by Marvelous Design
+                </div>
+            </div>
+            <div class="col-lg-6 col-xs-12">
+                <div class="right-text-content">
+                    <ul class="social-icons">
+                        <li><p style="color:brown">Follow Us</p></li>
+                        <li><a rel="nofollow" href="https://www.facebook.com/ahmed.gsorour20"><i class="fa fa-facebook"></i></a></li>
+                        <li><a rel="nofollow" href="https://twitter.com/ahmedgamal1494"><i class="fa fa-twitter"></i></a></li>
+                        <li><a rel="nofollow" href="https://www.linkedin.com/in/ahmed-gamal-85320a1"><i class="fa fa-linkedin"></i></a></li>
+
+
+                        <li><a rel="nofollow" href="https://www.instagram.com/ahmed.gamal1194"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <!-- jQuery -->
+    <script src="/Content/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/Content/assets/js/popper.js"></script>
+    <script src="/Content/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="/Content/assets/js/owl-carousel.js"></script>
+    <script src="/Content/assets/js/scrollreveal.min.js"></script>
+    <script src="/Content/assets/js/waypoints.min.js"></script>
+    <script src="/Content/assets/js/jquery.counterup.min.js"></script>
+    <script src="/Content/assets/js/imgfix.min.js"></script>
+    <script src="/Content/assets/js/slick.js"></script>
+    <script src="/Content/assets/js/lightbox.js"></script>
+    <script src="/Content/assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="/Content/assets/js/custom.js"></script>
+
+
+
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

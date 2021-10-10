@@ -1,0 +1,141 @@
+﻿@model IEnumerable<appconsumeapi.Models.Room>
+@{
+    ViewBag.Title = "search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+    h2 {
+        margin-top: 100px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        font-weight: bold;
+        width: 100%;
+        background-color: darkslateblue;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .addM {
+        margin: 20px 12%;
+    }
+
+        .addM a {
+            width: 300px;
+            height: 100%;
+            font-size: 40px;
+            font-weight: bold;
+            font-style: italic;
+            color: #428bb2 !important;
+        }
+
+            .addM a:hover {
+                color: white !important;
+                background-color: #428bb2;
+            }
+
+    .myContent {
+        margin: 30px auto;
+    }
+
+    .card {
+        height: 500px;
+    }
+
+        .card img {
+            height: 300px;
+        }
+
+        .card h5 {
+            font-size: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: #428bb2;
+        }
+
+        .card p {
+            font-family: Arial;
+            font-size: small;
+            font-size: 15px;
+        }
+
+    .myAvailable span {
+        color: green;
+        background-color: #e3e3e3;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
+    .myReserved span {
+        color: red;
+        background-color: #e3e3e3;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
+    .myApprove span {
+        color: orange;
+        background-color: #e3e3e3;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 5px;
+    }
+</style>
+
+<h2>@ViewBag.dept Rooms</h2>
+
+
+
+@if (Model.Count() == 0)
+
+
+{
+    <h2>Match No Names</h2>
+}
+else
+{
+
+
+    <div class="container section3-bg">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card m-1">
+                        <img src="~/Content/assets/images/@item.photo" alt="" width="100%" style="object-fit:cover" height="150">
+                        <div class="card-body">
+                            <h5 class="card-title drug_title">@item.RID</h5>
+                            <p class="card-text drug_details">Type: @item.type</p>
+                            <p class="card-text drug_details">Branch Name: @item.Branch.BName</p>
+                            @if (item.Status == "Available")
+                            {
+                                <p class="myAvailable card-text drug_details">State:<span> @item.Status </span></p>
+                            }
+                            else if (item.Status == "Reserved")
+                            {
+                                <p class="myReserved card-text drug_details">State:<span> @item.Status </span></p>
+
+                            }
+                        </div>
+                        @if (item.Status == "Reserved")
+                        {
+                            @Html.ActionLink("Cancel", "cancelroom", "Home", new { bid = item.BID, rid = item.RID }, new { @class = "btn btn-outline-success m-2" })
+
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Book", "bookroom", "Home", new { rid = item.RID, bid = item.BID }, new { @class = "btn btn-outline-success m-2" })
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+}
+
+

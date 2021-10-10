@@ -1,0 +1,197 @@
+﻿@*@using project_4.Models
+    @model List<Drug>*@
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<body>
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="~/Content/assets/images/Nile1.jpg" alt="">
+                    <div class="text-content">
+                        <h3>Nile 1</h3>
+                        @Html.ActionLink("GO TO", "allrooms", "Home", new { id = 1 }, new { @class = "main-stroked-button" })
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="~/Content/assets/images/Nile2.jpg" alt="">
+                    <div class="text-content">
+                        <h3>Nile 2</h3>
+                        @Html.ActionLink("GO TO", "allrooms", "Home", new { id = 2 }, new { @class = "main-stroked-button" })
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="~/Content/assets/images/Nile3.jpg" alt="">
+                    <div class="text-content">
+                        <h3>Nile 3</h3>
+                        @Html.ActionLink("GO TO", "allrooms", "Home", new { id = 2 }, new { @class = "main-stroked-button" })
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+
+
+        </div>
+    </div>
+
+    <br /> 
+
+    <br /> <br />
+    <div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
+
+    <!-- ***** Main Banner Area End ***** -->
+    <!-- ***** About Area Starts ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h3 class="contact_us">About Us</h3>
+                            <h2>We work to have a nice stay in our hotels</h2>
+                            <h2>and to have a nice vacation and happy life</h2>
+                        </div>
+                        <br /><br />
+
+                              <div class="row">
+
+                                  <div class="col-md-6 col-sm-6">
+                                      <div class="service-item">
+                                          <img src="~/Content/assets/images/1.png" alt="">
+                                          <h4>comfort</h4>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-6 col-sm-6">
+                                      <div class="service-item">
+                                          <img src="/Content/assets/images/2.png" alt="">
+                                          <h4>Relaxation</h4>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-6 col-sm-6">
+                                      <div class="service-item">
+                                          <img src="~/Content/assets/images/5.jpg" alt="">
+                                          <h4>Tourism</h4>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-6 col-sm-6">
+                                      <div class="service-item">
+                                          <img src="~/Content/assets/images/food.png" alt="">
+                                          <h4>Food</h4>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6 col-sm-6">
+                                      <div class="service-item">
+                                          <img src="~/Content/assets/images/pool.png" alt="">
+                                          <h4>Pool</h4>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-6 col-sm-6">
+                                      <div class="service-item">
+                                          <img src="~/Content/assets/images/6.png" alt="">
+                                          <h4>Sports</h4>
+                                      </div>
+                                  </div>
+                              </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        <p style="color:firebrick ;font-family:'Baskerville Old Face';font-size:20px">
+                            On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment,<br /><br /> so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best,<br /><br /> Every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Testimonials Ends ***** -->
+    <!-- ***** Contact Us Area Starts ***** -->
+    <section class="section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6 class="contact_us">Contact Us</h6>
+                            <h2>Feel free to keep in touch with us!</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <div class="contact-form">
+                        <form id="contact" action="" method="get">
+                            <div class="row">
+
+                                <div class="col-md-6 col-sm-12">
+                                    <br /><br />
+                                    <img src="/Content/assets/images/contact-info-01.png" alt=""> <span class="contact_num">Main : 010-248-79596 </span>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                    <br /><br />
+                                    <img src="/Content/assets/images/contact-info-01.png" alt=""> <span class="contact_num">Nile 1: 010-646-06100 </span>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                    <br /><br />
+                                    <img src="/Content/assets/images/contact-info-01.png" alt=""> <span class="contact_num">Nile 2: 011-247-58555 </span>
+                                </div>
+
+
+                                <div class="col-md-6 col-sm-12">
+                                    <br /><br />
+                                    <img src="/Content/assets/images/contact-info-01.png" alt=""> <span class="contact_num">Nile 3: 012-365-74210 </span>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                    <br /> <br />
+                                    <a class="contact_emails" href="mailto:ahmadgamal1494@gmail.com">
+                                        <img src="/Content/assets/images/contact-info-02.png" alt=""> ahmadgamal1494@gmail.com
+                                    </a>
+                                </div>
+
+
+                                <div class="col-md-6 col-sm-12">
+                                    <br /> <br />
+                                    <a class="contact_emails" href="mailto:ahmedgamal4real@gmail.com">
+                                        <img src="/Content/assets/images/contact-info-02.png" alt=""> ahmedgamal4real@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+
+
+
+
+
+
+
